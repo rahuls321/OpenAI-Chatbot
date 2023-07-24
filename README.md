@@ -13,3 +13,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Run Flask Backend
 
 Run `python main.py`
+
+[demo-video.webm](https://github.com/rahuls321/OpenAI-Chatbot/assets/29652757/110423d6-1c5e-468c-90c6-7355e5c58129)
