@@ -1,0 +1,31 @@
+<div class="container bg-warning-subtle">
+    <h1>Demo</h1>
+    <ul class="bot">
+        <div class="row m-5">
+            <div class="col-1"><img src="assets/bot.png" alt="Bot icon" style="width: 3em;"></div>
+            <div class="col-5 p-2 rounded-4 border border-1 shadow p-3 mb-5 bg-body-tertiary rounded object-fit-none">Hi, How can I help you?</div>
+            <div class="col"></div>
+        </div>
+    </ul>
+    <div *ngIf="chatbotMessages.length>0">
+        <ul class="bot">
+            <!-- {{ item | json}} -->
+            <li *ngFor="let item of chatbotMessages;">
+                <div class="row text-end m-5" *ngIf="item.human?.length>0">
+                    <div class="col-6"></div>
+                    <div class="col-5 rounded-4 text-start border border-1 shadow p-3 mb-5 bg-body-tertiary rounded">{{item.human}}</div>
+                    <div class="col"><img src="assets/man.png" alt="Human icon" style="width: 3em;"></div>
+                </div>
+                <div class="row m-5" *ngIf="item.bot?.length>0">
+                    <div class="col-1"><img src="assets/bot.png" alt="Bot icon" style="width: 3em;"></div>
+                    <div class="col-5 p-2 rounded-4 border border-1 shadow p-3 mb-5 bg-body-tertiary rounded">{{item.bot}}</div>
+                    <div class="col"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="grid gap-0 m-5 d-flex justify-content-center">
+        <div class="col-11"><textarea [(ngModel)]="humanInput" placeholder="Ask Here!" class="form-control" aria-label="With textarea"></textarea></div>
+        <div class="col"><button class="input-group-text" id="addon-wrapping" (click)="getResponse(humanInput)"><img src="assets/next.png" alt="Human img" style="width: 3em; height: 3em"></button></div>
+    </div>
+    <div class="d-flex justify-content-center"><a href="https://www.flaticon.com/free-icons/" title="bot icons"><p class="fs-6 fw-lighter">Bot icons created by Smashicons, Creartive and riajulislam - Flaticon</p></a></div>
